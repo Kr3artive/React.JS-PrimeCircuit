@@ -11,6 +11,7 @@ const Products = ({product}) => {
   
   return (
     <div>
+    <Link key={id} to={`/product/${id}`}>
      <div className='border-2 border-[#e4e4e4] h-[300px] mb-4 relative overflow-hidden group transition '>
       <div className='w-full h-full flex justify-center items-center'>
         <div className='w-[200px] mx-auto flex justify-center items-center'>
@@ -20,12 +21,12 @@ const Products = ({product}) => {
      </div>
      <div>
       <Link to={`/product/${id}`} ><strong>{title}</strong></Link>
-      <h1 className='text-xl'>₦ {price}</h1>
+      <div className='flex  items-center p-2 text-xl justify-around'>
+        <h1 className='text-xl'>₦ {price}</h1>
+        <button className='bg-green-500 p-2 rounded-lg' onClick={()=> addtoCart(product,id)} ><FaCartPlus/></button>
+      </div>
      </div>
-     <div className='flex  items-center p-2 text-xl justify-around'>
-      <Link className='grid p-2 border-2 rounded-lg border-slate-400' to={`/product/${id}`} ><FaInfoCircle/></Link>
-      <button className='bg-green-500 p-2 rounded-lg' onClick={()=> addtoCart(product,id)} ><FaCartPlus/></button>
-     </div>
+    </Link>
     </div>
   )
 }
