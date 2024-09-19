@@ -90,7 +90,7 @@ const Header = () => {
         </div>
         {smallscreen && (
           <div className='absolute z-50 flex justify-between p-4 top-0 left-0 right-0 bg-white'>
-            <div className='w-full text-xl flex flex-col'>
+            <div className='w-full h-full text-xl flex flex-col'>
               <Link onClick={() => setSmallscreen(false)} className='border-b-2 p-2 border-black text-center' to="/">Home</Link>
               <Link onClick={() => setSmallscreen(false)} className='border-b-2 p-2 border-black text-center' to="/Shop">Shop</Link>
               <Link onClick={() => setSmallscreen(false)} className='border-b-2 p-2 border-black text-center' to="/About">About</Link>
