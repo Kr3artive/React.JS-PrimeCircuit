@@ -114,9 +114,14 @@ const CheckOut = () => {
             <h1 className='mt-10 font-bold text-center text-3xl'>YOUR ORDERS</h1>
             {cart.map((item)=>{
               return (
-                  <div className='flex items-center gap-2'>
+                  <div className='flex mt-2 items-center gap-2'>
                     <div><img className='w-20 p-4' src={item.image} alt="" /></div>
-                    <div>{item.title}</div>
+                    <div>
+                      <strong>{item.title}</strong>
+                      <h1>UNIT PRICE: {item.price} </h1>
+                      <h1>AMOUNT: {item.amount} </h1>
+                      <div className="text-xl font-bold">{`₦ ${parseFloat(item.price * item.amount).toFixed(0)}`}</div>
+                    </div>
                   </div>
               )
             })}

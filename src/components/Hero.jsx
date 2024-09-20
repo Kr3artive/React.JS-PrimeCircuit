@@ -7,9 +7,9 @@ function Hero() {
       <div className='h-full justify-around items-center flex sm:block md:flex'>
         <img src={HeroImage}alt="Hero Image" className="w-[400px] border-2 rounded object-cover" />
         <div>
-          <h1 className="text-5xl font-bold mt-4">Elevate Your Everyday</h1>
-          <p className="text-lg mt-4">Discover timeless pieces for every occasion.</p>
-          <Link className="bg-black text-white text-lg text-center mt-4 rounded-md p-2" to="/Shop"> Shop Now</Link>
+          <h1 className="text-5xl font-bold">Elevate Your Everyday</h1>
+          <p className="text-lg">Discover timeless pieces for every occasion.</p>
+          <Link className="bg-black text-white text-lg text-center rounded-md p-2" to="/Shop"> Shop Now</Link>
         </div>
       </div>
       

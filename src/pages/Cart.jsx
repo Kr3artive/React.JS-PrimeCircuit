@@ -25,11 +25,11 @@ const Cart = () => {
             })}
             <div className='flex flex-col mt-4 mb-4 justify-around md:flex-row lg:flex-row xl:flex-row'>
               <Link className='bg-green-500 p-2 text-center' to='/Shop' >Continue Shopping</Link>
-              <Link className='bg-black p-2 text-white text-center' to='/CheckOut' >CHECK-OUT</Link>
+              <Link className='text-black font-bold' to='/CheckOut' >CHECK-OUT</Link>
             </div>
         </div>
         <div className='flex justify-around'>
-         <strong className='p-2'>TOTAL: {total}</strong>
+         <strong className='text-2xl p-2'>TOTAL: {total}</strong>
          <button className='p-2' onClick={clearCart} ><FaTrash/></button>
         </div>
       </div>

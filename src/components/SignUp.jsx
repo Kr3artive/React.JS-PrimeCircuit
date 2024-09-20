@@ -98,8 +98,8 @@ const SignUp = () => {
             <button className='w-44 bg-green-500 rounded-xl p-1 font-semibold' type='submit'>
               Sign Up
             </button>
-            <Link className='w-44 border-black border-2 rounded-xl font-semibold p-1 text-center' to='/SignIn'>
-              Sign In
+            <Link className='w-44 border-b-2  font-semibold p-1 text-center' to='/SignIn'>
+              Sign In →
             </Link>
           </div>
         </form>

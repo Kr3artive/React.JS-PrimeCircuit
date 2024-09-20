@@ -28,7 +28,7 @@ const Products = ({product}) => {
                     <FaCartPlus/>
                 </button>
                 <div>
-                    <Link to={`/product/${id}`}>
+                    <Link to={`/product/${id}`} className="line-clamp-1">
                         <strong>{title}</strong>
                     </Link>
                     <h1 className="text-xl">₦ {price}</h1>
