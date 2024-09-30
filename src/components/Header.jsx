@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import { CiSearch } from "react-icons/ci";
-import { CiShop } from "react-icons/ci";
+import { FaShoppingCart } from "react-icons/fa";
 import { CgProfile } from "react-icons/cg";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoCloseCircle } from "react-icons/io5";
@@ -117,7 +117,7 @@ const Header = () => {
         </div>
         <div className="relative flex justify-center items-center">
           <Link className="text-xl" to={"/Cart"}>
-            <CiShop />
+            <FaShoppingCart />
           </Link>
           <span className="absolute top-2/3 left-1/2 bg-green-500 text-black rounded-full w-5 h-5 text-center justify-center text-sm">
             {totalItems}

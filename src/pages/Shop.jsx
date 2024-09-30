@@ -63,7 +63,7 @@ const Shop = () => {
             <strong className="text-4xl bg-black text-white rounded-md p-1 mt-4 mb-4 text-center">
               WOMEN'S CATEGORY
             </strong>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2">
               {Women.map((product) => {
                 return <Products product={product} key={product.id} />;
               })}
@@ -73,7 +73,7 @@ const Shop = () => {
             <strong className="text-4xl  bg-black text-white rounded-md p-1 mt-4 mb-4 text-center">
               ELECTRONICS
             </strong>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2">
               {Electronics.map((product) => {
                 return <Products product={product} key={product.id} />;
               })}

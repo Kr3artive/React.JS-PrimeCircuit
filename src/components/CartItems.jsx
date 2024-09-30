@@ -8,34 +8,56 @@ const CartItems = ({ item }) => {
   const { id, title, price, amount, image } = item;
 
   return (
-    <div className="relative border-2 w-full border-black rounded-lg mb-3 p-2 items-center gap-2">
-      <button className="bg-red-500 absolute top-2 right-2" onClick={() => removeFromCart(id)}>
-        <IoMdClose className="text-black hover:text-white transition" />
-      </button>
-      <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
-        <Link className="flex justify-center" to={`/product/${id}`}>
-          <img className="p-2 max-w-[150px]" src={image} alt="" />
-        </Link>
-        <div className="flex justify-center gap-2 items-center">
-          <Link className="text-xl uppercase font-medium max-w-[240px] hover:underline" to={`/ProductDetails/${id}`}>
-            {title}
+    <tr className="border-b border-gray-200">
+      <td className="p-4">
+        <div className="flex items-center space-x-4">
+          <Link to={`/product/${id}`} className="hidden sm:block">
+            <img className="w-16 h-16 object-contain" src={image} alt={title} />
           </Link>
+          <div className="flex flex-col">
+            <Link 
+              className="text-sm md:text-base font-medium hover:underline"
+              to={`/ProductDetails/${id}`}
+            >
+              {title}
+            </Link>
+            <span className="text-sm text-gray-500 sm:hidden">₦ {parseFloat(price).toFixed(2)}</span>
+          </div>
         </div>
-        <div className="flex justify-center gap-2 items-center">
-          <button className="bg-red-500 text-xl mt-2 rounded-full" onClick={() => decreaseAmount(id)}>
+      </td>
+      <td className="p-4 text-center hidden sm:table-cell">₦ {parseFloat(price).toFixed(2)}</td>
+      <td className="p-4">
+        <div className="flex justify-center items-center space-x-2">
+          <button 
+            className="bg-red-500 text-white p-1 rounded-full hover:bg-red-600 transition-colors duration-200"
+            onClick={() => decreaseAmount(id)}
+            aria-label="Decrease quantity"
+          >
             <IoMdRemove />
           </button>
-          <div className="mt-2 font-bold">{amount}</div>
-          <button className="bg-green-500 text-xl mt-2 rounded-full" onClick={() => increaseAmount(id)}>
+          <span className="font-bold">{amount}</span>
+          <button 
+            className="bg-green-500 text-white p-1 rounded-full hover:bg-green-600 transition-colors duration-200"
+            onClick={() => increaseAmount(id)}
+            aria-label="Increase quantity"
+          >
             <IoMdAdd />
           </button>
         </div>
-        <div className="flex flex-col justify-center items-center">
-          <div className="text-xl">UNIT PRICE: {price}</div>
-          <div className="text-xl font-bold">{`₦ ${parseFloat(price * amount).toFixed(0)}`}</div>
-        </div>
-      </div>
-    </div>
+      </td>
+      <td className="p-4 text-center hidden sm:table-cell font-bold">
+        ₦ {parseFloat(price * amount).toFixed(2)}
+      </td>
+      <td className="p-4 text-center">
+        <button 
+          className="bg-red-500 text-white p-2 rounded-full hover:bg-red-600 transition-colors duration-200"
+          onClick={() => removeFromCart(id)}
+          aria-label="Remove item"
+        >
+          <IoMdClose />
+        </button>
+      </td>
+    </tr>
   );
 };
 
