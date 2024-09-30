@@ -116,7 +116,7 @@ const Header = () => {
           )}
         </div>
         <div className="relative flex justify-center items-center">
-          <Link className="text-xl" to={"/Cart"}>
+          <Link className="text-md" to={"/Cart"}>
             <FaShoppingCart />
           </Link>
           <span className="absolute top-2/3 left-1/2 bg-green-500 text-black rounded-full w-5 h-5 text-center justify-center text-sm">
