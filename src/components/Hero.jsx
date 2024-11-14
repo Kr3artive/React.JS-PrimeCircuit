@@ -8,11 +8,11 @@ function Hero() {
         <img
           src={HeroImage}
           alt="Hero Image"
-          className="w-[400px] border-2 rounded object-cover"
+          className=" sm:mt-8 w-[400px] border-2 rounded object-cover"
         />
         <div>
-          <h1 className="text-5xl font-bold">Elevate Your Everyday</h1>
-          <p className="text-lg">
+          <h1 className="mt-4 text-5xl font-bold">Elevate Your Everyday</h1>
+          <p className=" my-4 text-lg">
             Discover timeless pieces for every occasion.
           </p>
           <Link

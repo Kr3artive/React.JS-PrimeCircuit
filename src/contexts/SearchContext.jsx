@@ -1,10 +1,8 @@
-import React from "react";
 import { createContext, useState } from "react";
 
 export const SearchContext = createContext();
 
 const SearchProvider = ({ children }) => {
-  // States for handling the Search
   const [search, setSearch] = useState("");
   const [togglesearch, setTogglesearch] = useState(false);
 
