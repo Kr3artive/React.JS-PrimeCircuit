@@ -1,9 +1,10 @@
-import React, { useState, useEffect, useContext } from "react";
+import { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import { CiSearch } from "react-icons/ci";
 import { FaShoppingCart } from "react-icons/fa";
 import { CgProfile } from "react-icons/cg";
 import { GiHamburgerMenu } from "react-icons/gi";
+import { MdClose } from "react-icons/md";
 import { IoCloseCircle } from "react-icons/io5";
 import { CartContext } from "../contexts/CartContext";
 import { ProductContext } from "../contexts/ProductContext";
@@ -27,7 +28,7 @@ const Header = () => {
 
   // Handle small screen navigation toggle
   const handleShowSmall = () => {
-    setSmallscreen(true);
+    setSmallscreen((prevsmallscreen) => !prevsmallscreen);
   };
 
   // Search Products function (updates `result` state)
@@ -129,46 +130,47 @@ const Header = () => {
         >
           <CgProfile />
         </Link>
-        <div
-          className="lg:hidden relative flex items-center"
-          onClick={handleShowSmall}
-        >
-          <GiHamburgerMenu />
-        </div>
-        {smallscreen && (
-          <div className="absolute h-full z-50 flex justify-between p-4 top-0 left-0 right-0 bg-white">
-            <div className="w-full text-xl flex flex-col">
-              <Link
-                onClick={() => setSmallscreen(false)}
-                className="border-b-2 p-2 border-black text-center"
-                to="/"
-              >
-                Home
-              </Link>
-              <Link
-                onClick={() => setSmallscreen(false)}
-                className="border-b-2 p-2 border-black text-center"
-                to="/Shop"
-              >
-                Shop
-              </Link>
-              <Link
-                onClick={() => setSmallscreen(false)}
-                className="border-b-2 p-2 border-black text-center"
-                to="/About"
-              >
-                About
-              </Link>
-              <Link
-                onClick={() => setSmallscreen(false)}
-                className="border-b-2 p-2 border-black text-center"
-                to="/Contacts"
-              >
-                Contact
-              </Link>
+        <div className="flex lg:hidden relative">
+          {!smallscreen ? (
+            <GiHamburgerMenu size={25} onClick={handleShowSmall} />
+          ) : (
+            <MdClose size={25} onClick={handleShowSmall} />
+          )}
+          {smallscreen && (
+            <div className="absolute top-8 right-0 rounded-lg mt-2 w-48 bg-white shadow-md p-4 flex flex-col items-start gap-4 transform transition-transform duration-300 ease-in-ou">
+              <div className="w-full text-xl flex flex-col">
+                <Link
+                  onClick={() => setSmallscreen(false)}
+                  className="border-b-2 p-2 border-black text-center"
+                  to="/"
+                >
+                  Home
+                </Link>
+                <Link
+                  onClick={() => setSmallscreen(false)}
+                  className="border-b-2 p-2 border-black text-center"
+                  to="/Shop"
+                >
+                  Shop
+                </Link>
+                <Link
+                  onClick={() => setSmallscreen(false)}
+                  className="border-b-2 p-2 border-black text-center"
+                  to="/About"
+                >
+                  About
+                </Link>
+                <Link
+                  onClick={() => setSmallscreen(false)}
+                  className="border-b-2 p-2 border-black text-center"
+                  to="/Contacts"
+                >
+                  Contact
+                </Link>
+              </div>
             </div>
-          </div>
-        )}
+          )}
+        </div>
       </div>
     </div>
   );
